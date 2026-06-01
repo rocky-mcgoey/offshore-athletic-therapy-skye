@@ -1,0 +1,18 @@
+<svg width="1400" height="1600" viewBox="0 0 1400 1600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1400" height="1600" fill="#F2EEE7"/>
+  <rect x="80" y="80" width="1240" height="1440" rx="72" fill="url(#paint0_linear)"/>
+  <circle cx="700" cy="520" r="188" fill="#E8E0D3"/>
+  <path d="M420 1260C420 1060.07 582.072 898 782 898H801C1000.93 898 1163 1060.07 1163 1260V1416H420V1260Z" fill="#55675A"/>
+  <path d="M934 559C934 686.578 830.578 790 703 790C575.422 790 472 686.578 472 559C472 431.422 575.422 328 703 328C830.578 328 934 431.422 934 559Z" fill="#F7F4EE"/>
+  <path d="M569 535C606.333 469.667 650.667 437 702 437C753.333 437 797.667 469.667 835 535" stroke="#D3C7B9" stroke-width="28" stroke-linecap="round"/>
+  <path d="M548 878C626 934 740 944 855 902C919 878 968.667 837.333 1004 780" stroke="#DCE3D8" stroke-width="44" stroke-linecap="round"/>
+  <rect x="166" y="170" width="332" height="112" rx="56" fill="#FFFFFF" fill-opacity="0.76"/>
+  <text x="332" y="238" fill="#2B342F" font-family="Arial, sans-serif" font-size="38" font-weight="700" text-anchor="middle">Portrait Placeholder</text>
+  <text x="700" y="1490" fill="#2B342F" font-family="Arial, sans-serif" font-size="42" font-weight="700" text-anchor="middle">Replace with Skye McGoey headshot</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="700" y1="80" x2="700" y2="1520" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8F4ED"/>
+      <stop offset="1" stop-color="#EAE1D5"/>
+    </linearGradient>
+  </defs>
+</svg>
