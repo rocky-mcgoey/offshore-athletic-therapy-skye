@@ -13,6 +13,30 @@ const initialState: FormState = {
   message: "",
 };
 
+function validateSubmission(payload: ContactFormSubmission) {
+  if (
+    !payload.firstName.trim() ||
+    !payload.lastName.trim() ||
+    !payload.email.trim() ||
+    !payload.phone.trim() ||
+    !payload.message.trim()
+  ) {
+    return "Please fill in all required fields.";
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!emailPattern.test(payload.email.trim())) {
+    return "Please enter a valid email address.";
+  }
+
+  if (payload.message.trim().length < 12) {
+    return "Please share a little more detail in your message.";
+  }
+
+  return null;
+}
+
 export function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const [state, setState] = useState<FormState>(initialState);
@@ -61,6 +85,16 @@ export function ContactForm() {
       message: String(formData.get("message") ?? ""),
     };
 
+    const validationError = validateSubmission(payload);
+
+    if (validationError) {
+      setState({
+        status: "error",
+        message: validationError,
+      });
+      return;
+    }
+
     startTransition(async () => {
       await submitContactForm(payload);
     });
@@ -96,6 +130,7 @@ export function ContactForm() {
           name="message"
           rows={6}
           required
+          minLength={12}
           className="min-h-40 w-full rounded-[1.5rem] border border-line bg-white/80 px-4 py-3 text-base text-foreground outline-none transition focus:border-sage-deep focus:ring-2 focus:ring-sage-deep/20"
           placeholder="Tell us a bit about what you are looking for."
         />
@@ -112,7 +147,11 @@ export function ContactForm() {
 
         <p
           className={`text-sm leading-6 ${
-            state.status === "error" ? "text-[#8a4f3d]" : "text-muted"
+            state.status === "error"
+              ? "text-[#8a4f3d]"
+              : state.status === "success"
+                ? "text-sage-deep"
+                : "text-muted"
           }`}
           aria-live="polite"
         >
@@ -150,6 +189,7 @@ function Field({
         type={type}
         autoComplete={autoComplete}
         required
+        minLength={type === "tel" ? 7 : undefined}
         className="min-h-12 w-full rounded-full border border-line bg-white/80 px-4 text-base text-foreground outline-none transition focus:border-sage-deep focus:ring-2 focus:ring-sage-deep/20"
       />
     </div>

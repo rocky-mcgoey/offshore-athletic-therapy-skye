@@ -15,7 +15,7 @@ export function Footer() {
                 <h2 className="font-display text-4xl leading-none text-balance text-foreground sm:text-5xl">
                   Build a stronger path back to movement.
                 </h2>
-                <p className="max-w-2xl text-base leading-8 text-muted sm:text-lg">
+                <p className="max-w-2xl text-lg leading-8 text-muted sm:text-xl">
                   Offshore Athletic Therapy offers personalized care for injury
                   recovery, movement health, and ICBC rehabilitation in
                   Kimberley, BC.

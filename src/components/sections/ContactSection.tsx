@@ -74,7 +74,7 @@ export function ContactSection({
               <div className="soft-divider" />
 
               <div className="space-y-4">
-                <p className="text-sm leading-7 text-muted">
+                <p className="text-base leading-7 text-muted">
                   Prefer to book right away? JaneApp is the fastest path to
                   securing your appointment.
                 </p>

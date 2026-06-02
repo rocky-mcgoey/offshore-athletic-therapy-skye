@@ -85,9 +85,10 @@ export const siteContent: SiteContent = {
       "4th Year Student of Osteopathic Manual Therapy",
     ],
     bio: [
-      "Skye McGoey provides thoughtful, movement-focused care for active adults, athletes, and clients navigating injury recovery in Kimberley, BC.",
-      "Her approach combines detailed assessment, hands-on support, and personalized rehabilitation so clients understand what is happening in their body and what the next step forward should look like.",
-      "Ongoing education in osteopathic manual therapy continues to shape a treatment style that values precision, whole-body awareness, and practical results that last beyond a single appointment.",
+      "I was born and raised in Canmore, AB where I grew up participating in  competitive gymnastics, rock climbing and volleyball, and of course enjoyed many other recreational mountain activities. ",
+      "Being surrounded by extreme sports enthusiasts, athletes, and injury, I developed a passion for movement and health and understanding how to use the body and what could make it better. While pursuing a degree in Athletic Therapy at Camosun College in Victoria, I was introduced to Manual Osteopathy. The practice was gentle, mindful, systemically comprehensive and profoundly intriguing. And so once I completed my undergrad I decided to continue my studies and am currently a 4th year student of Osteopathy Manual Therapy at Sutherland-Chan School of Osteopathy in Vancouver. Needless to say, I have been beyond fascinated by the benefits and it has added a lot of tools within my practice and approach to patient care. What I love most about Manual Osteopathy is its appreciation for the interconnectedness and complexity of the human body and it has allowed me to gain a deeper level of understanding of human movement and function.",
+      "I use a combination of manual therapy techniques and exercise rehabilitation to encourage mobility within the body systems to help address each individual on a physical, psychological, emotional, and spiritual level to restore harmony between body systems and promote overall well being.",
+      "When I'm not working, you can find me spending time with friends and family, hiking, biking, skiing, running, and spending time with my pup. I look forward to helping you along your health and wellness journey.",
     ],
     education: [
       {

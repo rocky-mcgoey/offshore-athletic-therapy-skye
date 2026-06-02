@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-import { siteContent } from "@/data/site";
 import { buildContactEmail, validateContactSubmission } from "@/lib/contact";
 
 const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
   : null;
+const contactEmail = process.env.CONTACT_EMAIL;
 
 export async function POST(request: Request) {
   try {
@@ -23,7 +23,17 @@ export async function POST(request: Request) {
       return NextResponse.json(
         {
           message:
-            "The contact form is not configured yet. Please email skye.mcgoey@gmail.com directly for now.",
+            "The contact form is not configured yet. Please try again later.",
+        },
+        { status: 500 },
+      );
+    }
+
+    if (!contactEmail) {
+      return NextResponse.json(
+        {
+          message:
+            "The contact form recipient is not configured yet. Please try again later.",
         },
         { status: 500 },
       );
@@ -36,7 +46,7 @@ export async function POST(request: Request) {
 
     await resend.emails.send({
       from: fromEmail,
-      to: [siteContent.contact.email],
+      to: [contactEmail],
       replyTo: validation.data.email,
       subject: email.subject,
       text: email.text,
@@ -53,7 +63,7 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         message:
-          "Something went wrong while sending your message. Please try again or email skye.mcgoey@gmail.com directly.",
+          "Something went wrong while sending your message. Please try again later.",
       },
       { status: 500 },
     );

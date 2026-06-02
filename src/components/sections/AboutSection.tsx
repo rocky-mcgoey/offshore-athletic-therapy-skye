@@ -41,7 +41,7 @@ export function AboutSection({ showEyebrow = true }: AboutSectionProps) {
               ))}
             </div>
 
-            <div className="space-y-4 text-base leading-8 text-muted">
+            <div className="space-y-4 text-lg leading-8 text-muted">
               {siteContent.about.bio.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
@@ -63,7 +63,7 @@ export function AboutSection({ showEyebrow = true }: AboutSectionProps) {
                     <h4 className="mt-3 text-lg font-semibold text-foreground">
                       {item.degree}
                     </h4>
-                    <p className="mt-2 text-base leading-7 text-muted">
+                    <p className="mt-2 text-lg leading-7 text-muted">
                       {item.institution}
                     </p>
                   </div>

@@ -48,6 +48,8 @@ body {
     linear-gradient(180deg, #fcfaf6 0%, #f6f3ed 50%, #f1ebe2 100%);
   color: var(--foreground);
   font-family: var(--font-manrope), sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
 }
 
 body::before {

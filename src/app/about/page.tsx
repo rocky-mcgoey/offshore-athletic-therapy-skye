@@ -1,4 +1,3 @@
-import { MissionSection } from "@/components/sections/MissionSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { buildPageMetadata } from "@/lib/metadata";
@@ -17,7 +16,6 @@ export default function AboutPage() {
         description="Learn more about Skye McGoey, her training, and the care philosophy behind Offshore Athletic Therapy in Kimberley, BC."
       />
       <AboutSection showEyebrow={false} />
-      <MissionSection />
     </main>
   );
 }

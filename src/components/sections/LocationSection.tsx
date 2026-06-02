@@ -30,7 +30,7 @@ export function LocationSection({
               </h3>
             </div>
 
-            <p className="text-base leading-8 text-muted">
+            <p className="text-lg leading-8 text-muted">
               {siteContent.location.address.street}
               <br />
               {siteContent.location.address.city},{" "}
@@ -39,7 +39,7 @@ export function LocationSection({
               {siteContent.location.address.postalCode}
             </p>
 
-            <p className="text-sm leading-7 text-foreground/85">
+            <p className="text-base leading-7 text-foreground/85">
               Easy access for clients throughout Kimberley and surrounding
               communities looking for personalized rehabilitation support.
             </p>

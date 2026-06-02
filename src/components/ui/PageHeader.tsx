@@ -17,7 +17,7 @@ export function PageHeader({ title, description }: PageHeaderProps) {
             <h1 className="font-display text-5xl leading-none text-balance text-foreground sm:text-6xl lg:text-7xl">
               {title}
             </h1>
-            <p className="text-base leading-8 text-muted sm:text-lg">
+            <p className="text-lg leading-8 text-muted sm:text-xl">
               {description}
             </p>
           </div>

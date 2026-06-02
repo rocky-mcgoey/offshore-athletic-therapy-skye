@@ -34,8 +34,8 @@ export function ServicesSection({ showEyebrow = true }: ServicesSectionProps) {
                 <h3 className="font-display text-3xl leading-none text-foreground">
                   {service.title}
                 </h3>
-                <p className="text-base leading-8 text-muted">{service.summary}</p>
-                <p className="text-sm leading-7 text-foreground/85">
+                <p className="text-lg leading-8 text-muted">{service.summary}</p>
+                <p className="text-base leading-7 text-foreground/85">
                   {service.description}
                 </p>
               </div>
@@ -53,7 +53,7 @@ export function ServicesSection({ showEyebrow = true }: ServicesSectionProps) {
 
               <div className="soft-divider my-6" />
 
-              <div className="space-y-4 text-sm leading-7 text-muted">
+              <div className="space-y-4 text-base leading-7 text-muted">
                 {service.learnMore.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
@@ -67,7 +67,7 @@ export function ServicesSection({ showEyebrow = true }: ServicesSectionProps) {
             <h3 className="font-display text-3xl leading-none text-foreground">
               Ready to get started?
             </h3>
-            <p className="max-w-2xl text-base leading-8 text-muted">
+            <p className="max-w-2xl text-lg leading-8 text-muted">
               Book an appointment online or reach out if you would like help
               finding the right service for your situation.
             </p>

@@ -16,7 +16,7 @@ export function Hero() {
               <h1 className="font-display text-5xl leading-none text-balance text-foreground sm:text-6xl lg:text-7xl">
                 {siteContent.hero.headline}
               </h1>
-              <p className="max-w-2xl text-lg leading-8 text-muted sm:text-xl">
+              <p className="max-w-2xl text-xl leading-8 text-muted sm:text-2xl">
                 {siteContent.hero.subheadline}
               </p>
             </div>
@@ -41,7 +41,7 @@ export function Hero() {
               {siteContent.hero.detailCards.map((detail) => (
                 <div
                   key={detail}
-                  className="rounded-[1.75rem] border border-line bg-white/65 p-5 text-sm leading-7 text-muted shadow-[0_20px_50px_rgba(31,38,34,0.08)] backdrop-blur-sm"
+                  className="rounded-[1.75rem] border border-line bg-white/65 p-5 text-base leading-7 text-muted shadow-[0_20px_50px_rgba(31,38,34,0.08)] backdrop-blur-sm"
                 >
                   {detail}
                 </div>
