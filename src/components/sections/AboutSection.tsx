@@ -12,15 +12,17 @@ export function AboutSection({ showEyebrow = true }: AboutSectionProps) {
     <section className="section-space">
       <Container>
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="surface-card overflow-hidden p-3">
-            {/* TODO: Replace with a professional portrait of Skye McGoey. */}
-            <Image
-              src="/images/skye-placeholder.svg"
-              alt="Placeholder image for Skye McGoey portrait"
-              width={1200}
-              height={1400}
-              className="h-full min-h-[420px] w-full rounded-[1.75rem] object-cover"
-            />
+          <div className="surface-card self-start overflow-hidden p-3">
+            <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.75rem]">
+              <Image
+                src="/images/uploads/profile-photo-skye.jpg"
+                alt="Profile image for Skye McGoey"
+                fill
+                priority
+                sizes="(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw"
+                className="object-cover object-center"
+              />
+            </div>
           </div>
 
           <div className="space-y-10">

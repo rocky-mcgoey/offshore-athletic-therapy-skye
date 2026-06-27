@@ -3,7 +3,7 @@ import type { SiteContent } from "@/types/site";
 export const siteContent: SiteContent = {
   businessName: "Offshore Athletic Therapy",
   locationLabel: "Kimberley, BC",
-  bookingUrl: "https://skyemcgoey-athletictherapy.janeapp.com/",
+  bookingUrl: "https://skyemcgoey-athletictherapy.janeapp.com/#staff_member/1",
   metadata: {
     title:
       "Offshore Athletic Therapy | Athletic Therapy & Kinesiology in Kimberley, BC",
