@@ -76,10 +76,6 @@ export function Footer() {
             <p>
               Copyright 2026 Offshore Athletic Therapy. All rights reserved.
             </p>
-            <p>
-              Website built for a calm, simple booking experience on every
-              device.
-            </p>
           </div>
         </div>
       </Container>
