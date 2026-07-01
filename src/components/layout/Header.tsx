@@ -42,8 +42,6 @@ export function Header() {
                 </Link>
               ))}
             </nav>
-
-            <BookingButton className="hidden lg:inline-flex" />
           </div>
         </div>
       </Container>

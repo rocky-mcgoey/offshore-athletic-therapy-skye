@@ -31,7 +31,11 @@ export function Footer() {
                 </h3>
                 <div className="flex flex-col gap-3 text-sm text-foreground">
                   {siteContent.navigation.map((item) => (
-                    <Link key={item.href} href={item.href} className="hover:text-sage-deep">
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="inline-flex w-fit items-center gap-2 rounded-full border border-transparent px-3 py-1.5 font-medium text-sage-deep underline decoration-sage-deep/35 underline-offset-4 transition hover:border-line hover:bg-white/70 hover:decoration-sage-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sage-deep focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                    >
                       {item.label}
                     </Link>
                   ))}
@@ -69,8 +73,13 @@ export function Footer() {
           <div className="soft-divider my-8" />
 
           <div className="flex flex-col gap-3 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-            <p>Copyright 2026 Offshore Athletic Therapy. All rights reserved.</p>
-            <p>Website built for a calm, simple booking experience on every device.</p>
+            <p>
+              Copyright 2026 Offshore Athletic Therapy. All rights reserved.
+            </p>
+            <p>
+              Website built for a calm, simple booking experience on every
+              device.
+            </p>
           </div>
         </div>
       </Container>
