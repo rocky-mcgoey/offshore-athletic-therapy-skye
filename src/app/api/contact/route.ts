@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { buildContactEmail, validateContactSubmission } from "@/lib/contact";
 
+const resendFromEmail =
+  "Offshore Athletic Therapy <contact@skyemcgoey-athletictherapy.com>";
 const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
   : null;
@@ -40,18 +42,27 @@ export async function POST(request: Request) {
     }
 
     const email = buildContactEmail(validation.data);
-    const fromEmail =
-      process.env.RESEND_FROM_EMAIL ??
-      "Offshore Athletic Therapy <onboarding@resend.dev>";
 
-    await resend.emails.send({
-      from: fromEmail,
+    const { error } = await resend.emails.send({
+      from: resendFromEmail,
       to: [contactEmail],
       replyTo: validation.data.email,
       subject: email.subject,
       text: email.text,
       html: email.html,
     });
+
+    if (error) {
+      console.error("Resend failed to send contact email", error);
+
+      return NextResponse.json(
+        {
+          message:
+            "Something went wrong while sending your message. Please try again later.",
+        },
+        { status: 500 },
+      );
+    }
 
     return NextResponse.json({
       message:

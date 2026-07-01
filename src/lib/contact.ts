@@ -59,11 +59,12 @@ export function validateContactSubmission(
 }
 
 export function buildContactEmail(data: ContactFormSubmission) {
-  const subject = `New website inquiry from ${data.firstName} ${data.lastName}`;
+  const subject = `New Website Inquiry - ${siteContent.businessName}`;
   const text = [
     `New contact form submission for ${siteContent.businessName}`,
     "",
-    `Name: ${data.firstName} ${data.lastName}`,
+    `First Name: ${data.firstName}`,
+    `Last Name: ${data.lastName}`,
     `Email: ${data.email}`,
     `Phone: ${data.phone}`,
     "",
@@ -74,7 +75,8 @@ export function buildContactEmail(data: ContactFormSubmission) {
   const html = `
     <div style="font-family: Arial, sans-serif; color: #1f2622; line-height: 1.6;">
       <h2 style="margin-bottom: 16px;">New website inquiry</h2>
-      <p><strong>Name:</strong> ${escapeHtml(data.firstName)} ${escapeHtml(data.lastName)}</p>
+      <p><strong>First Name:</strong> ${escapeHtml(data.firstName)}</p>
+      <p><strong>Last Name:</strong> ${escapeHtml(data.lastName)}</p>
       <p><strong>Email:</strong> ${escapeHtml(data.email)}</p>
       <p><strong>Phone:</strong> ${escapeHtml(data.phone)}</p>
       <p><strong>Message:</strong></p>
