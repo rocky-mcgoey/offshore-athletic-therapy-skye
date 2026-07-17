@@ -7,6 +7,7 @@ interface BookingButtonProps {
   variant?: "primary" | "secondary";
 }
 
+// Visual presets keep CTA styling consistent wherever booking is promoted.
 const variants = {
   primary:
     "border border-[#607663] bg-[#6f8672] text-[#fbfcf9] shadow-[0_18px_38px_rgba(52,69,56,0.18)] hover:-translate-y-0.5 hover:bg-[#5f7562] hover:shadow-[0_22px_44px_rgba(52,69,56,0.24)]",
@@ -14,6 +15,10 @@ const variants = {
     "border border-line bg-white/80 text-foreground hover:-translate-y-0.5 hover:bg-sage-soft/70",
 };
 
+/**
+ * Shared outbound booking CTA.
+ * The destination URL lives in site content so it only needs to be updated once.
+ */
 export function BookingButton({
   className,
   label = "Book Now",

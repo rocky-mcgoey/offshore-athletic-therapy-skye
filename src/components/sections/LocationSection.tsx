@@ -7,6 +7,10 @@ interface LocationSectionProps {
   showEyebrow?: boolean;
 }
 
+/**
+ * Location section shared by home-style layouts and the dedicated location page.
+ * The map URL and address are centralized so updates happen in one place.
+ */
 export function LocationSection({
   showEyebrow = true,
 }: LocationSectionProps) {

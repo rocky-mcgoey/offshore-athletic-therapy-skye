@@ -7,12 +7,17 @@ interface SectionHeadingProps {
   align?: "left" | "center";
 }
 
+/**
+ * Reusable heading block for major sections.
+ * This keeps typography and spacing consistent across the site.
+ */
 export function SectionHeading({
   eyebrow,
   title,
   description,
   align = "left",
 }: SectionHeadingProps) {
+  // Alignment only changes the wrapper classes, not the inner content structure.
   const alignment =
     align === "center" ? "mx-auto max-w-3xl text-center" : "max-w-3xl";
 

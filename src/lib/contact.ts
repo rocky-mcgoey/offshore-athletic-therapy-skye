@@ -3,10 +3,16 @@ import type { ContactFormSubmission } from "@/types/site";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+/**
+ * Normalizes unknown input into trimmed strings so validation can stay simple.
+ */
 function cleanText(value: unknown) {
   return typeof value === "string" ? value.trim() : "";
 }
 
+/**
+ * Escapes user-entered content before injecting it into the HTML email body.
+ */
 function escapeHtml(value: string) {
   return value
     .replaceAll("&", "&amp;")
@@ -16,6 +22,11 @@ function escapeHtml(value: string) {
     .replaceAll("'", "&#39;");
 }
 
+/**
+ * Server-side validation for contact form submissions.
+ * We still validate on the client for faster feedback, but the API route should
+ * never trust browser input on its own.
+ */
 export function validateContactSubmission(
   input: unknown,
 ):
@@ -58,6 +69,10 @@ export function validateContactSubmission(
   return { success: true, data };
 }
 
+/**
+ * Converts validated form data into the email content sent through Resend.
+ * The function returns both text and HTML versions for better email support.
+ */
 export function buildContactEmail(data: ContactFormSubmission) {
   const subject = `New Website Inquiry - ${siteContent.businessName}`;
   const text = [

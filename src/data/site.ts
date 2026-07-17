@@ -1,6 +1,13 @@
 import type { SiteContent } from "@/types/site";
 
+/**
+ * Central content source for the site.
+ *
+ * A junior developer should be able to update most text, links, and business
+ * details here without needing to touch the rendering components.
+ */
 export const siteContent: SiteContent = {
+  // Shared brand and booking data used across layout, metadata, and CTAs.
   businessName: "Offshore Athletic Therapy",
   locationLabel: "Kimberley, BC",
   bookingUrl: "https://skyemcgoey-athletictherapy.janeapp.com/#staff_member/1",
@@ -10,6 +17,7 @@ export const siteContent: SiteContent = {
     description:
       "Offshore Athletic Therapy provides athletic therapy, kinesiology, injury rehabilitation, and ICBC recovery services in Kimberley, BC.",
   },
+  // Primary navigation shown in both the header and footer.
   navigation: [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
@@ -17,6 +25,7 @@ export const siteContent: SiteContent = {
     { label: "Location", href: "/location" },
     { label: "Contact", href: "/contact" },
   ],
+  // Homepage hero messaging and the short supporting cards below it.
   hero: {
     headline: "Move Better. Recover Stronger.",
     subheadline:
@@ -27,6 +36,7 @@ export const siteContent: SiteContent = {
       "Direct-billing support for ICBC rehabilitation clients.",
     ],
   },
+  // Service cards used on the homepage and the dedicated services page.
   services: [
     {
       title: "Athletic Therapy",
@@ -77,6 +87,7 @@ export const siteContent: SiteContent = {
       ],
     },
   ],
+  // Practitioner profile information for the about section/page.
   about: {
     name: "Skye McGoey",
     credentials: [
@@ -103,10 +114,12 @@ export const siteContent: SiteContent = {
       },
     ],
   },
+  // Mission content used for the short brand values section on the homepage.
   mission: {
     title: "Our Mission",
     text: "To give you the tools, knowledge, and physical capacity to live a full, healthy, and mobile life.",
   },
+  // Physical clinic information for directions and embedded maps.
   location: {
     name: "UNWIND",
     address: {
@@ -120,6 +133,7 @@ export const siteContent: SiteContent = {
     mapEmbedUrl:
       "https://www.google.com/maps?q=179%20Wallinger%20Ave%2C%20Kimberley%2C%20BC%20V1A%201Y7&z=15&output=embed",
   },
+  // Contact details and placeholder socials for future launch updates.
   contact: {
     email: "skye.mcgoey@gmail.com",
     socials: [

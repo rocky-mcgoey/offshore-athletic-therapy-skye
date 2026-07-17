@@ -8,6 +8,10 @@ interface ContactSectionProps {
   showEyebrow?: boolean;
 }
 
+/**
+ * Contact section that pairs quick contact details with the full contact form.
+ * The left side offers low-friction options, while the form handles richer inquiries.
+ */
 export function ContactSection({
   showEyebrow = true,
 }: ContactSectionProps) {

@@ -6,6 +6,11 @@ import { siteContent } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 import { BookingButton } from "@/components/ui/BookingButton";
 
+/**
+ * Sticky site header with the primary navigation.
+ * This is a client component because `usePathname` is used to highlight the
+ * active route in the nav.
+ */
 export function Header() {
   const pathname = usePathname();
 
@@ -32,6 +37,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  // Active-link styling is based on an exact pathname match.
                   className={`rounded-full px-4 py-2 text-sm font-medium transition ${
                     pathname === item.href
                       ? "border border-[#a9b8aa] bg-sage-soft text-sage-deep shadow-[0_12px_26px_rgba(84,102,88,0.10)]"

@@ -1,3 +1,9 @@
+/**
+ * Shared content types for the marketing site.
+ *
+ * Keeping these shapes in one place makes it easier for newer developers to
+ * see what data each section expects before they dig into the rendering code.
+ */
 export interface NavigationItem {
   label: string;
   href: string;
@@ -23,6 +29,10 @@ export interface SocialLink {
   placeholder?: boolean;
 }
 
+/**
+ * Payload shape used by both the client form and the API route.
+ * Sharing the type helps keep validation logic aligned on both sides.
+ */
 export interface ContactFormSubmission {
   firstName: string;
   lastName: string;
@@ -31,6 +41,10 @@ export interface ContactFormSubmission {
   message: string;
 }
 
+/**
+ * Top-level content contract for the whole website.
+ * Most sections read from this object instead of hard-coding copy locally.
+ */
 export interface SiteContent {
   businessName: string;
   locationLabel: string;

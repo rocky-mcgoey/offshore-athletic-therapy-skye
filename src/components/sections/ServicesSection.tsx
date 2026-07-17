@@ -8,6 +8,11 @@ interface ServicesSectionProps {
   showEyebrow?: boolean;
 }
 
+/**
+ * Services grid used on the homepage and the full services page.
+ * All service copy comes from `siteContent`, so this component is mostly
+ * responsible for presentation rather than owning business text.
+ */
 export function ServicesSection({ showEyebrow = true }: ServicesSectionProps) {
   return (
     <section className="section-space">
@@ -21,6 +26,7 @@ export function ServicesSection({ showEyebrow = true }: ServicesSectionProps) {
         <div className="grid gap-6 lg:grid-cols-3">
           {siteContent.services.map((service, index) => (
             <article key={service.title} className="surface-card flex flex-col p-6 sm:p-8">
+              {/* Using the array index here is safe because the order is intentional marketing content. */}
               <div className="flex items-start justify-between gap-4">
                 <span className="text-sm font-semibold uppercase tracking-[0.24em] text-muted">
                   0{index + 1}

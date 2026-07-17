@@ -3,6 +3,9 @@
 import { useRef, useState, useTransition } from "react";
 import type { ContactFormSubmission } from "@/types/site";
 
+/**
+ * Small UI state object for user feedback after submit attempts.
+ */
 type FormState = {
   status: "idle" | "success" | "error";
   message: string;
@@ -13,6 +16,10 @@ const initialState: FormState = {
   message: "",
 };
 
+/**
+ * Client-side validation gives immediate feedback before we make a network call.
+ * The API route repeats the same checks because browser validation can be bypassed.
+ */
 function validateSubmission(payload: ContactFormSubmission) {
   if (
     !payload.firstName.trim() ||
@@ -37,11 +44,18 @@ function validateSubmission(payload: ContactFormSubmission) {
   return null;
 }
 
+/**
+ * Contact form component responsible for collecting data and calling the API.
+ * The actual email sending happens on the server in `/api/contact`.
+ */
 export function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const [state, setState] = useState<FormState>(initialState);
   const [isPending, startTransition] = useTransition();
 
+  /**
+   * Sends the validated payload to the server and updates the UI based on the response.
+   */
   async function submitContactForm(payload: ContactFormSubmission) {
     const response = await fetch("/api/contact", {
       method: "POST",
@@ -63,6 +77,7 @@ export function ContactForm() {
       return;
     }
 
+    // Resetting the form only happens after the server confirms success.
     formRef.current?.reset();
     setState({
       status: "success",
@@ -72,6 +87,10 @@ export function ContactForm() {
     });
   }
 
+  /**
+   * Builds a typed payload from the browser form event, validates it, and then
+   * starts the async submit without blocking urgent UI updates.
+   */
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setState(initialState);
@@ -169,6 +188,9 @@ interface FieldProps {
   type?: "text" | "email" | "tel";
 }
 
+/**
+ * Small input wrapper so each text field stays styled and labeled the same way.
+ */
 function Field({
   label,
   name,

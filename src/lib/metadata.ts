@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { siteContent } from "@/data/site";
 
+/**
+ * Builds consistent metadata for every page.
+ * Each page only needs to provide the page-specific title, description, and path.
+ */
 export function buildPageMetadata(
   title: string,
   description: string,

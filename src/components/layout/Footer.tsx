@@ -3,6 +3,11 @@ import { siteContent } from "@/data/site";
 import { BookingButton } from "@/components/ui/BookingButton";
 import { Container } from "@/components/ui/Container";
 
+/**
+ * Site footer that doubles as a final call-to-action section.
+ * It reuses centralized navigation and contact content so the footer stays in
+ * sync with the rest of the site.
+ */
 export function Footer() {
   return (
     <footer className="section-space pt-10">

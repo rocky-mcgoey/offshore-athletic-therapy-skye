@@ -4,6 +4,11 @@ import { siteContent } from "@/data/site";
 import { BookingButton } from "@/components/ui/BookingButton";
 import { Container } from "@/components/ui/Container";
 
+/**
+ * Homepage hero section.
+ * This introduces the brand, presents the primary calls to action, and shows
+ * the short proof-point cards stored in site content.
+ */
 export function Hero() {
   return (
     <section className="section-space pb-14 pt-8 sm:pt-12 lg:pt-16">

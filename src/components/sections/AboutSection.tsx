@@ -7,6 +7,10 @@ interface AboutSectionProps {
   showEyebrow?: boolean;
 }
 
+/**
+ * About section shared by the homepage-style layout and the dedicated about page.
+ * The optional eyebrow lets page-level headers avoid repeating the same label.
+ */
 export function AboutSection({ showEyebrow = true }: AboutSectionProps) {
   return (
     <section className="section-space">

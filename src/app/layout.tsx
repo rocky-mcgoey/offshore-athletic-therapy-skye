@@ -5,17 +5,20 @@ import { Header } from "@/components/layout/Header";
 import { siteContent } from "@/data/site";
 import "./globals.css";
 
+// Base font for body copy and UI text.
 const bodyFont = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
 });
 
+// Display font used for large headings and brand moments.
 const displayFont = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
+// App Router metadata applied to the whole site unless a page overrides it.
 export const metadata: Metadata = {
   title:
     "Offshore Athletic Therapy | Athletic Therapy & Kinesiology in Kimberley, BC",
@@ -45,6 +48,7 @@ export const metadata: Metadata = {
   },
 };
 
+// Structured data helps search engines understand the business details.
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "MedicalBusiness",
@@ -63,6 +67,11 @@ const localBusinessSchema = {
   url: siteContent.bookingUrl,
 };
 
+/**
+ * Root layout shared by every route.
+ * It loads global fonts/styles, wraps pages with the shared shell, and injects
+ * structured business data for SEO.
+ */
 export default function RootLayout({
   children,
 }: Readonly<{

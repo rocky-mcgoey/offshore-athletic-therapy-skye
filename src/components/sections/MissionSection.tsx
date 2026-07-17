@@ -1,6 +1,10 @@
 import { siteContent } from "@/data/site";
 import { Container } from "@/components/ui/Container";
 
+/**
+ * Short values section on the homepage.
+ * It keeps the messaging compact while still reinforcing the care philosophy.
+ */
 export function MissionSection() {
   return (
     <section className="section-space pt-4">
@@ -19,6 +23,7 @@ export function MissionSection() {
                 {siteContent.mission.text}
               </p>
               <div className="grid gap-4 sm:grid-cols-3">
+                {/* These simple value labels add rhythm without needing more CMS data. */}
                 {["Assess", "Educate", "Empower"].map((value) => (
                   <div
                     key={value}

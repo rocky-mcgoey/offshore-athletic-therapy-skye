@@ -5,6 +5,10 @@ interface PageHeaderProps {
   description: string;
 }
 
+/**
+ * Intro banner used on the dedicated inner pages.
+ * It gives each page a clear title without duplicating hero logic from home.
+ */
 export function PageHeader({ title, description }: PageHeaderProps) {
   return (
     <section className="section-space pb-0 pt-8 sm:pt-10 lg:pt-12">
